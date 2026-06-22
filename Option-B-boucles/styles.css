@@ -236,13 +236,15 @@ body {
     border-radius: 21px;
     background: #FFF;
     box-shadow: 0px 4px 34px 30px rgba(0, 0, 0, 0.04);
+    height: 100%;
+    overflow: hidden;
 }
 
 .container-card-text {
     width: 100%;
     padding-left: 6.5%;
     padding-right: 6.5%;
-    height: 478px;
+    height: auto;
     min-height: 478px;
 }
 
@@ -282,7 +284,7 @@ body {
 }
 
 .recipe-description:hover {
-    max-height: 100%;
+    max-height: none;
 }
 
 .recipe-description:hover~.description-container {

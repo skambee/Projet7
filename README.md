@@ -1,54 +1,55 @@
-# Projet de recherche de recettes de cuisine
+# Les Petits Plats — comparaison des performances
 
-Ce projet consiste à implémenter une fonctionnalité de recherche de recettes de cuisine sur un site web.
+Ce dossier contient **deux façons de faire la même recherche** :
 
-## Contexte
+- **Option A** : utilise les méthodes de tableau comme `filter`, `map` et `some`.
+- **Option B** : utilise surtout des boucles `for` et `while`.
 
-L'entreprise "Les petits plats" est une entreprise qui édite des livres de cuisine. Elle souhaite se lancer dans un nouveau projet : réaliser son propre site de recettes de cuisine.
+Les deux options donnent les mêmes résultats. Le but du benchmark est simplement de voir laquelle travaille le plus vite.
 
-## Objectifs
+## Lancer le test facilement
 
-L'objectif de ce projet est d'implémenter une fonctionnalité de recherche de recettes de cuisine qui soit performante et conforme au design du site.
+Aucune installation n'est nécessaire.
 
-## Procédure
+1. Ouvre le fichier **`BENCHMARK.html`** dans Chrome, Firefox ou Edge.
+2. Clique sur **« Lancer le benchmark »**.
+3. Attends la fin du test sans changer d'onglet.
+4. Regarde la colonne **« opérations par seconde »** : le nombre le plus élevé gagne.
 
-Le projet se déroule en trois étapes :
+Tu peux relancer le test plusieurs fois. Le résultat peut légèrement changer selon l'ordinateur et le navigateur.
 
-1. Implémentation de l'interface utilisateur
-2. Implémentation des deux algorithmes de recherche
-3. Comparaison des performances des deux algorithmes
+## Résultat obtenu
 
-### Implémentation de l'interface utilisateur
+Sur les 50 recettes du projet et plusieurs recherches différentes :
 
-L'interface utilisateur doit respecter la maquette fournie par l'équipe de design. Elle doit permettre à l'utilisateur de saisir une requête de recherche et de visualiser les résultats de la recherche.
+> **L'Option B, avec les boucles, est la plus performante.**
 
-### Implémentation des deux algorithmes de recherche
+Dans mes tests, elle était environ **17 % plus rapide en moyenne**. L'écart était surtout visible avec les filtres avancés. Pour certaines recherches simples, les deux options étaient très proches.
 
-Deux algorithmes de recherche doivent être implémentés :
+## Quel choix garder ?
 
-* Un algorithme utilisant des boucles natives
-* Un algorithme utilisant des méthodes de l'objet array
+Pour ce projet, je conseille de garder **l'Option B** :
 
-Chaque algorithme doit traiter les données suivantes :
+- elle est généralement plus rapide ;
+- elle peut arrêter la recherche dès qu'une correspondance est trouvée ;
+- elle évite de créer plusieurs tableaux temporaires.
 
-* Un tableau de 50 recettes
-* Les mots-clés de la requête de recherche
+L'Option A reste plus courte et peut sembler plus facile à lire, mais elle réalise davantage d'opérations intermédiaires.
 
-### Comparaison des performances des deux algorithmes
+## Utiliser le site JSBEN.CH
 
-Les performances des deux algorithmes doivent être comparées à l'aide d'un outil de test de performance. L'outil doit mesurer le nombre d'opérations par seconde réalisées par chaque algorithme.
+Les fichiers suivants sont prêts :
 
-## Méthodes
+- **`JSBENCH-SETUP.js`** : à coller dans la partie **Setup** de JSBEN.CH ;
+- **`JSBENCH-BLOCS.md`** : contient les blocs Option A et Option B à copier dans les tests.
 
-### Implémentation de l'interface utilisateur
+Le fichier **`BENCHMARK.html`** permet de faire la même comparaison localement, sans créer de compte et sans copier tout le code sur un site.
 
-L'interface utilisateur sera implémentée en JavaScript. Les composants de l'interface seront réutilisables.
+## Contenu du dossier
 
-### Implémentation des algorithmes de recherche
-
-Les algorithmes de recherche seront implémentés en JavaScript. Les algorithmes seront optimisés pour la performance.
-
-### Comparaison des performances des algorithmes
-
-Les performances des algorithmes seront comparées à l'aide de l'outil Jsben.ch.
-
+- `Option-A-methodes-tableau/` : version avec les méthodes de tableau ;
+- `Option-B-boucles/` : version avec les boucles ;
+- `BENCHMARK.html` : test automatique à ouvrir dans le navigateur ;
+- `JSBENCH-SETUP.js` : préparation prête pour JSBEN.CH ;
+- `JSBENCH-BLOCS.md` : petits blocs à comparer sur JSBEN.CH ;
+- `RESULTATS-BENCHMARK.md` : détail des mesures déjà réalisées.
